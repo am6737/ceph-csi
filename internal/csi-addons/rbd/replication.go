@@ -215,6 +215,11 @@ func validateSchedulingInterval(interval string) error {
 func (rs *ReplicationServer) EnableVolumeReplication(ctx context.Context,
 	req *replication.EnableVolumeReplicationRequest,
 ) (*replication.EnableVolumeReplicationResponse, error) {
+
+	fmt.Println("-------------------------------------------")
+	fmt.Println("1741 EnableVolumeReplication req", req)
+	fmt.Println("-------------------------------------------")
+
 	volumeID := req.GetVolumeId()
 	if volumeID == "" {
 		return nil, status.Error(codes.InvalidArgument, "empty volume ID in request")

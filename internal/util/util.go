@@ -77,9 +77,9 @@ func RoundOffCephFSVolSize(bytes int64) int64 {
 // variables which will be set during the build time.
 var (
 	// GitCommit tell the latest git commit image is built from.
-	GitCommit string
+	GitCommit string = "test"
 	// DriverVersion which will be driver version.
-	DriverVersion string
+	DriverVersion string = "canary"
 )
 
 // Config holds the parameters list which can be configured.

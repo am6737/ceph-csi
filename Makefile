@@ -236,8 +236,10 @@ image-cephcsi: .container-cmd
 
 push-image-cephcsi: GOARCH ?= $(shell go env GOARCH 2>/dev/null)
 push-image-cephcsi: .container-cmd image-cephcsi
-	$(CONTAINER_CMD) tag $(CSI_IMAGE) $(CSI_IMAGE)-$(GOARCH)
-	$(CONTAINER_CMD) push $(CSI_IMAGE)-$(GOARCH)
+#	$(CONTAINER_CMD) tag $(CSI_IMAGE) $(CSI_IMAGE)-$(GOARCH)
+#	$(CONTAINER_CMD) push $(CSI_IMAGE)-$(GOARCH)
+	$(CONTAINER_CMD) tag $(CSI_IMAGE) $(CSI_IMAGE)
+	$(CONTAINER_CMD) push $(CSI_IMAGE)
 
 create-manifest: GOARCH ?= $(shell go env GOARCH 2>/dev/null)
 create-manifest: .container-cmd

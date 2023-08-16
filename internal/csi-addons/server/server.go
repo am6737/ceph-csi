@@ -103,6 +103,8 @@ func (cas *CSIAddonsServer) Start() error {
 		return fmt.Errorf("failed to listen on %q: %w", cas.path, err)
 	}
 
+	fmt.Println("listener -------------------> ", listener)
+
 	go cas.serve(listener)
 
 	return nil

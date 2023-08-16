@@ -520,6 +520,11 @@ func resizeNodeStagePath(ctx context.Context,
 		if isBlock {
 			return nil
 		}
+
+		// Skip filesystem resize if it's a block volume
+		if isBlock {
+			return nil
+		}
 	}
 	// check stagingPath needs resize.
 	ok, err = resizer.NeedResize(devicePath, stagingTargetPath)
